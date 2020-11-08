@@ -1,0 +1,28 @@
+Group {
+ name Random_Value_Generator
+ help "This creates a random value!"
+ selected true
+ xpos 292
+ ypos -215
+ addUserKnob {20 User}
+ addUserKnob {7 value}
+ value 176.229709
+ addUserKnob {7 min R 0 1000}
+ min 170
+ addUserKnob {7 max -STARTLINE R 0 5000}
+ max 200
+ addUserKnob {22 createRandomValue l "Create Random Value 0-1" T "import random\nnuke.thisNode().knob('value').setValue(nuke.thisNode().knob('min').value()+(random.random()*(nuke.thisNode().knob('max').value()-nuke.thisNode().knob('min').value())))" +STARTLINE}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {26 info l "" +STARTLINE T "<font color = #666>Random Value Generator v1.0<br>\nLast updated: Today"}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 0
+ }
+ Output {
+  name Output1
+  xpos 0
+  ypos 300
+ }
+end_group
